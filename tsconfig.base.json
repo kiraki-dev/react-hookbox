@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@react-hookbox/use-immediate-effect": [
+        "libs/use-immediate-effect/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
