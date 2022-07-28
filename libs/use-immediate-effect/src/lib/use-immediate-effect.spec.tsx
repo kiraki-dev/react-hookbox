@@ -1,10 +1,17 @@
-import { render } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 
-import UseImmediateEffect from './use-immediate-effect';
+import useImmediateEffect from './use-immediate-effect';
 
-describe('UseImmediateEffect', () => {
+describe('useImmediateEffect', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<UseImmediateEffect />);
-    expect(baseElement).toBeTruthy();
+    const { result } = renderHook(() => useImmediateEffect());
+
+    expect(result.current.count).toBe(0);
+
+    act(() => {
+      result.current.increment();
+    });
+
+    expect(result.current.count).toBe(1);
   });
 });
