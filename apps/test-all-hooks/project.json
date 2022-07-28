@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/test-all-hooks/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/test-all-hooks",
+        "index": "apps/test-all-hooks/src/index.html",
+        "baseHref": "/",
+        "main": "apps/test-all-hooks/src/main.tsx",
+        "polyfills": "apps/test-all-hooks/src/polyfills.ts",
+        "tsConfig": "apps/test-all-hooks/tsconfig.app.json",
+        "assets": [
+          "apps/test-all-hooks/src/favicon.ico",
+          "apps/test-all-hooks/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/test-all-hooks/src/environments/environment.ts",
+              "with": "apps/test-all-hooks/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "test-all-hooks:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "test-all-hooks:build:development"
+        },
+        "production": {
+          "buildTarget": "test-all-hooks:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/test-all-hooks/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/test-all-hooks"],
+      "options": {
+        "jestConfig": "apps/test-all-hooks/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
