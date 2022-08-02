@@ -2,7 +2,7 @@ import { useRef, EffectCallback } from 'react';
 
 import { assertDepsValidity } from './utils/assert-deps-validity';
 
-export function useImmediateEffect(effectCallback: EffectCallback, deps: unknown[]): void {
+export const useImmediateEffect = (effectCallback: EffectCallback, deps: unknown[]): void => {
   assertDepsValidity(deps);
 
   const depsRef = useRef(deps);
@@ -23,6 +23,4 @@ export function useImmediateEffect(effectCallback: EffectCallback, deps: unknown
   destructureCallbackRef.current?.();
   const destructureCallback = effectCallback();
   destructureCallbackRef.current = destructureCallback as () => void | undefined;
-}
-
-export default useImmediateEffect;
+};
