@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useImmediateEffect } from '@react-hookbox/use-immediate-effect';
+import { useImmediateEffect } from 'immediate-effect';
 import { useEffect, useState } from 'react';
 
 const StyledApp = styled.div`

@@ -1,10 +1,10 @@
 /* eslint-disable */
 export default {
-  displayName: 'use-asap-effect',
+  displayName: 'asap-effect',
   preset: '../../jest.preset.js',
   transform: {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/use-asap-effect',
+  coverageDirectory: '../../coverage/libs/asap-effect',
 };

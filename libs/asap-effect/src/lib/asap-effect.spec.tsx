@@ -1,7 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
-import * as React from 'react';
 
-import useAsapEffect from './use-asap-effect';
+import { useAsapEffect } from './asap-effect';
 
 describe('useAsapEffect', () => {
   it('should render successfully', () => {

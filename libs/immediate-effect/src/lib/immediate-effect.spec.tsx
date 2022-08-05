@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import useImmediateEffect from './use-immediate-effect';
+import { useImmediateEffect } from './immediate-effect';
 
 describe('useImmediateEffect', () => {
   it('should render successfully', () => {

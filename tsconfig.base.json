@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@react-hookbox/use-asap-effect": ["libs/use-asap-effect/src/index.ts"],
-      "@react-hookbox/use-immediate-effect": [
-        "libs/use-immediate-effect/src/index.ts"
+      "asap-effect": ["libs/asap-effect/src/index.ts"],
+      "immediate-effect": [
+        "libs/immediate-effect/src/index.ts"
       ]
     }
   },

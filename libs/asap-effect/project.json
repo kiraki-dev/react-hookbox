@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/use-immediate-effect/src",
+  "sourceRoot": "libs/asap-effect/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -8,16 +8,16 @@
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/use-immediate-effect",
-        "tsConfig": "libs/use-immediate-effect/tsconfig.lib.json",
-        "project": "libs/use-immediate-effect/package.json",
-        "entryFile": "libs/use-immediate-effect/src/index.ts",
-        "external": ["react/jsx-runtime"],
+        "outputPath": "dist/libs/asap-effect",
+        "tsConfig": "libs/asap-effect/tsconfig.lib.json",
+        "project": "libs/asap-effect/package.json",
+        "entryFile": "libs/asap-effect/src/index.ts",
+        "external": ["@emotion/react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
           {
-            "glob": "libs/use-immediate-effect/README.md",
+            "glob": "libs/asap-effect/README.md",
             "input": ".",
             "output": "."
           }
@@ -28,14 +28,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/use-immediate-effect/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/asap-effect/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/use-immediate-effect"],
+      "outputs": ["coverage/libs/asap-effect"],
       "options": {
-        "jestConfig": "libs/use-immediate-effect/jest.config.ts",
+        "jestConfig": "libs/asap-effect/jest.config.ts",
         "passWithNoTests": true
       }
     }
