@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useImmediateEffect } from 'immediate-effect';
+import { useImmediateEffectDangerously } from 'immediate-effect';
 import { useEffect, useState } from 'react';
 
 const StyledApp = styled.div`
@@ -13,7 +13,7 @@ export function App() {
     console.log('useEffect', `count=${count}`, 'runs after rendering');
   }, [count]);
 
-  useImmediateEffect(() => {
+  useImmediateEffectDangerously(() => {
     console.log('useImmediateEffect', `count=${count}`, 'runs during rendering');
   }, [count]);
 
