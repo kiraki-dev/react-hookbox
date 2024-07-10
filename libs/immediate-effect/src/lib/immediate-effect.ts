@@ -8,16 +8,16 @@ export const useImmediateEffectDangerously = (
 ): void => {
   assertDepsValidity(deps);
 
-  const depsRef = useRef(deps);
+  const depsRef = useRef<unknown[]>();
   const destructureCallbackRef = useRef<ReturnType<EffectCallback>>();
 
-  if (depsRef.current.length !== deps.length) {
+  if (depsRef.current && depsRef.current.length !== deps.length) {
     throw new Error(
       'useImmediateEffectDangerously: deps length must not change'
     );
   }
 
-  if (depsRef.current.every((dep, index) => dep === deps[index])) {
+  if (depsRef.current?.every((dep, index) => dep === deps[index])) {
     return;
   }
 
